@@ -37,5 +37,10 @@ input {
 .bouton {
   width: 50%;
   height: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0 auto;
+  border: 1px solid gray;
+  border-radius: 5px;
 }

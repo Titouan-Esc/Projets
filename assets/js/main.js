@@ -43,9 +43,9 @@ bouton.addEventListener("click", (e) => {
 function deleteCheck(e) {
   const item = e.target;
 
-  if (item.className[0] === "delete_bouton") {
+  if (item.classList[0] === "delete_bouton") {
     const tout = item.parentElement;
 
-    tout.remove();
+    tout.clear();
   }
 }

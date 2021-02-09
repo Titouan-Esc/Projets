@@ -1,51 +1,41 @@
-// ! Creation de mes variables
-const bouton = document.querySelector(".bouton");
-const nom = document.querySelector("#nom");
-const email = document.querySelector("#email");
-const liste = document.querySelector(".liste");
+const todoList = document.querySelector(".liste");
+const todoBouton = document.querySelector(".bouton");
+const todoName = document.querySelector("#nom");
+const todoEmail = document.querySelector("#email");
+const msg = document.querySelector("#msg");
 
-// * fonction pour la liste
-bouton.addEventListener("click", (e) => {
+todoBouton.addEventListener("click", (e) => {
   e.preventDefault();
 
-  const li = document.createElement("li");
-  li.className = "liste1";
+  const newListe = document.createElement("li");
+  newListe.className = "li";
+  newListe.appendChild(
+    document.createTextNode(`${todoName.value} ${todoEmail.value}`)
+  );
 
-  li.appendChild(document.createTextNode(`${nom.value} / ${email.value}`));
+  if (todoEmail.value === "") {
+    msg.innerText = "Ecrit quelque chose la con de ta mere";
+    msg.style.background = "red";
 
-  if (liste.appendChild(li)) {
-    nom.value = "";
-    email.value = "";
+    setTimeout(() => {
+      msg.innerText = "";
+      msg.style.background = "transparent";
+    }, 2500);
+  } else {
+    const todoCheck = document.createElement("button");
+    const todoRemove = document.createElement("button");
+    todoCheck.innerHTML = "<p> OK </p>";
+    todoRemove.innerHTML = "<p> NO </p>";
+    todoCheck.classList.add("check");
+    todoRemove.classList.add("remove");
+    newListe.appendChild(todoRemove);
+    newListe.appendChild(todoCheck);
+    todoList.appendChild(newListe);
+    todoName.value = "";
+    todoEmail.value = "";
   }
-
-  const multDiv = document.createElement("div");
-  multDiv.classList.add("mult");
-
-  // ! Bouton de check
-  const checkBouton = document.createElement("bouton");
-  checkBouton.innerHTML = "<p>OK</p>";
-  checkBouton.classList.add("check_bouton");
-  multDiv.appendChild(checkBouton);
-
-  // ! Bouton delete
-  const deleteBouton = document.createElement("bouton");
-  deleteBouton.innerHTML = "<p>NO<p>";
-  deleteBouton.classList.add("delete_bouton");
-  multDiv.appendChild(deleteBouton);
-
-  li.appendChild(multDiv);
-
-  bouton.value = "";
 });
 
-// ! function pour la suppression de mes li
-
-function deleteCheck(e) {
-  const item = e.target;
-
-  if (item.classList[0] === "delete_bouton") {
-    const tout = item.parentElement;
-
-    tout.clear();
-  }
-}
+todoList.addEventListener("click", (e) => {
+  console.log(e.target.parentNode);
+});

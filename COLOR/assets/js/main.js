@@ -11,4 +11,12 @@ randomColor.addEventListener("click", (e) => {
   }
   const colorHex = colorPicked.join("");
   bgColor.style.background = `#${colorHex}`;
+
+  //  ! VERSION RGB
+  //   const randomRGB = function () {
+  //     return Math.floor(Math.random()*255);
+  // }
+
+  // let rgbString=`rgb(${randomRGB()},${randomRGB()},${randomRGB()})`;
+  // bgColor.style.background = `${rgbString}`;
 });

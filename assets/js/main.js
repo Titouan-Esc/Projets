@@ -40,8 +40,8 @@ todoList.addEventListener("click", (e) => {
   console.log(e.target.parentNode);
   const button = e.target.parentNode;
 
-  if (button.classList.contains("item_remove")) {
-    msg.innerText = `La tâche "${button.parentNode.textContent}" à était supprimé tes grands morts de ta grosse mere la pute!!!!`;
+  if (button.classList.contains("remove")) {
+    msg.innerText = `La tâche "${button.parentNode.textContent}" à était surrpimé (gros lâche)`;
     msg.style.background = "green";
     setTimeout(() => {
       msg.innerText = "";
@@ -49,7 +49,7 @@ todoList.addEventListener("click", (e) => {
     }, 2500);
     button.parentNode.remove();
     console.log(button.parentNode.textContent);
-  } else if (button.classList.contains("item_check")) {
+  } else if (button.classList.contains("check")) {
     if (button.parentNode.style.textDecoration === "line-through") {
       button.parentNode.style.textDecoration = "none";
     } else {

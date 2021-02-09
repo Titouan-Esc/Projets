@@ -34,5 +34,8 @@ inputColor.addEventListener("keyup", (e) => {
 pickerColor.addEventListener("input", (e) => {
   pickedColor = e.currentTarget.value;
   console.log(e.currentTarget.value);
+  const label = document.querySelector("#label-color-picker");
+  label.innerText = `${pickedColor}`;
   bgColor.style.background = `${pickedColor}`;
+  label.style.color = `${pickedColor}`;
 });

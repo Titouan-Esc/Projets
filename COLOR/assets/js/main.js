@@ -30,3 +30,9 @@ inputColor.addEventListener("keyup", (e) => {
     inputColor.style.border = `2px solid red`;
   }
 });
+
+pickerColor.addEventListener("input", (e) => {
+  pickedColor = e.currentTarget.value;
+  console.log(e.currentTarget.value);
+  bgColor.style.background = `${pickedColor}`;
+});

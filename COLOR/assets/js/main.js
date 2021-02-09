@@ -20,3 +20,13 @@ randomColor.addEventListener("click", (e) => {
   // let rgbString=`rgb(${randomRGB()},${randomRGB()},${randomRGB()})`;
   // bgColor.style.background = `${rgbString}`;
 });
+
+inputColor.addEventListener("keyup", (e) => {
+  const userInput = inputColor.value;
+  console.log(userInput);
+  if (userInput.length === 3 || userInput.length === 6) {
+    bgColor.style.background = `#${userInput}`;
+  } else {
+    inputColor.style.border = `2px solid red`;
+  }
+});

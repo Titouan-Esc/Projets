@@ -55,22 +55,26 @@ input {
   padding: 0;
 }
 
-.liste1 {
+.li {
   list-style: none;
-  width: 100%;
-  height: 7vh;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  color: white;
-  background-color: gray;
-  border-radius: 15px;
-  padding-left: 10px;
-  margin: 10px 0;
 }
 
-.btn {
-  width: 2vw;
-  height: 2vh;
-  background-color: white;
+/* ! premier bouton */
+.remove {
+  width: 10px;
+  height: 20px;
+  padding: 0;
+}
+
+.remove p {
+  margin: 0;
+}
+
+/* ! deuxieme bouton  */
+.check {
+  padding: 0;
+}
+
+.check p {
+  margin: 0;
 }
